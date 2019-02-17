@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pop_bg"
+    tools:context=".PopActivity"
+    android:layout_weight="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="90dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="0">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="100dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="- Vad är Pantbrev?\n\nPantbrev är ett dokument som banken använder som säkerhet för det lånebelopp du behöver låna av banken. Om säljaren redan har lån på huset finns det befintliga pantbrev som du tar över vid köpet och som du använder som säkerhet för dina lån.\n\n2% av beloppet på eventuella nya pantbrev som behöver utfärdas. Kostnaden betalar du i avgift till Lantmäteriet (plus adm.avgift på 375 kronor).\n\n\n- Vad är Lagfart?\n\nLagfart kallas den registrering av köpet av fast egendom (fastighet). Du ansöker om att bli registrerad som fastighetens ägare hos Lantmäteriet. Det kostar då en stämpelskatt för att få lagfart.\n\nKostnaden är 1,5 procent av köpeskillingen plus en avgift på 825 kronor."
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/btn_close_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_design"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="STÄNG"/>
+</RelativeLayout>

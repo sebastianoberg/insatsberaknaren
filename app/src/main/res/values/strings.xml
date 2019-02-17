@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DesignChallange</string>
+    <string name="berakna_kontantinsats_default">BERÄKNA 15% KONTANTINSATS</string>
+    <string name="berakna_kontantinsats">BERÄKNA %1$d</string>
+    <string name="berakna_kontantinsats_tva">% KONTANTINSATS</string>
+    <string name="kontantinsats">KONTANTINSATS:</string>
+    <string name="lagfart_info">Varav Lagfart: %1$d</string>
+    <string name="pantbrev_info">Och Pantbrev: %1$d</string>
+    <string name="kontantinsats_one">%1$d</string>
+    <string name="kontantinsats_otwo">% KONTANTINSATS"</string>
+    <string name="kontantinsats_default">15% KONTANTINSATS: </string>
+    <string name="total_insats">Ni behöver: </string>
+    <string name="hus_pris_saknas">Huspris måste anges!</string>
+    <string name="tom_strang"></string>
+</resources>
