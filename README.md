@@ -1,0 +1,2 @@
+# insatsberaknaren
+Beräkna kontantinsats
