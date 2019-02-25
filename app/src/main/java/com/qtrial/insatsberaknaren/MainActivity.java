@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     EditText mKontantInsats;
     TextView mTextViewKontantInsats;
 
+    EditText mTotalDownPayment;
+    EditText mTotalLagfart;
+    EditText mTotalPantbrev;
+
     CalculatorUtil calculatorUtil = new CalculatorUtil();
 
     @Override
@@ -44,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         mSeekBar = (SeekBar) findViewById(R.id.seekBar);
         mTextViewKontantInsats = (TextView) findViewById(R.id.textView4);
 
+        mTotalDownPayment = (EditText) findViewById(R.id.editText5);
+        mTotalPantbrev = (EditText) findViewById(R.id.editText6);
+        mTotalLagfart = (EditText) findViewById(R.id.editText7);
+
         mSeekBar.setProgress(0);
         mSeekBar.setMax(25-15);
         mSeekBar.setEnabled(false);
@@ -57,17 +65,26 @@ public class MainActivity extends AppCompatActivity {
                     int lagfartToUse = Integer.parseInt(NumberTextWatcherForThousand.trimCommaOfString(mLagfart.getText().toString()));
                     int kontantInsatsToUse = Integer.parseInt(NumberTextWatcherForThousand.trimCommaOfString(mKontantInsats.getText().toString()));
 
-                    int result = calculatorUtil.calcluteDownPaymentWithParameters(housePriceToUse, lagfartToUse, kontantInsatsToUse);
+                    double result = calculatorUtil.calcluteDownPaymentWithParameters(housePriceToUse, lagfartToUse, kontantInsatsToUse);
                     double getLagFart = calculatorUtil.sumLagfart(housePriceToUse);
                     double getPantbrev = calculatorUtil.sumPantbrev(housePriceToUse, lagfartToUse, kontantInsatsToUse);
 
-                    String spacedString = (String.format("%,d", result));
+                    // String spacedString = (String.format("%,d", result));
 
-                    Intent i = new Intent(getApplicationContext(), PopActivity.class);
-                    i.putExtra("summa", spacedString);
-                    i.putExtra("lagfart", getLagFart);
-                    i.putExtra("pantbrev", getPantbrev);
-                    startActivity(i);
+                    mTotalDownPayment.addTextChangedListener(new NumberTextWatcherForThousand(mTotalDownPayment));
+                    mTotalDownPayment.setText(String.valueOf(result));
+
+                    mTotalPantbrev.addTextChangedListener(new NumberTextWatcherForThousand(mTotalPantbrev));
+                    mTotalPantbrev.setText(String.valueOf(getPantbrev));
+
+                    mTotalLagfart.addTextChangedListener(new NumberTextWatcherForThousand(mTotalLagfart));
+                    mTotalLagfart.setText(String.valueOf(getLagFart));
+
+                    // Intent i = new Intent(getApplicationContext(), PopActivity.class);
+                    // i.putExtra("summa", spacedString);
+                    // i.putExtra("lagfart", getLagFart);
+                    // i.putExtra("pantbrev", getPantbrev);
+                    // startActivity(i);
 
                 } else {
                     toastMessage("Ange belopp i samtliga fält");
@@ -159,6 +176,9 @@ public class MainActivity extends AppCompatActivity {
         mHousePrice.setText(getResources().getString(R.string.tom_strang));
         mLagfart.setText(getResources().getString(R.string.tom_strang));
         mKontantInsats.setText(getResources().getString(R.string.tom_strang));
+        mTotalDownPayment.setText("");
+        mTotalPantbrev.setText("");
+        mTotalLagfart.setText("");
     }
 
     private void toastMessage(String message) {
