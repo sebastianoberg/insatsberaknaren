@@ -20,6 +20,12 @@ public class UnitTest {
     }
 
     @Test
+    public void positivtWithZeroPantbrev() {
+        int result = calculatorUtil.calcluteDownPaymentWithParameters(4450000, 3831500, 667500);
+        Assert.assertEquals(735075, result);
+    }
+
+    @Test
     public void zeroPantbrev() {
         int result = calculatorUtil.calcluteDownPaymentWithParameters(3500000, 3000000, 525000);
         Assert.assertEquals(578325, result);

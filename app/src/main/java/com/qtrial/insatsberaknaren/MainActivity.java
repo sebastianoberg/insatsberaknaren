@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         mTotalPantbrev = (EditText) findViewById(R.id.editText6);
         mTotalLagfart = (EditText) findViewById(R.id.editText7);
 
+        disableEditText(mTotalDownPayment, mTotalPantbrev, mTotalLagfart);
+
+
         mSeekBar.setProgress(0);
         mSeekBar.setMax(25-15);
         mSeekBar.setEnabled(false);
@@ -69,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
                     double getLagFart = calculatorUtil.sumLagfart(housePriceToUse);
                     double getPantbrev = calculatorUtil.sumPantbrev(housePriceToUse, lagfartToUse, kontantInsatsToUse);
 
-                    // String spacedString = (String.format("%,d", result));
-
                     mTotalDownPayment.addTextChangedListener(new NumberTextWatcherForThousand(mTotalDownPayment));
                     mTotalDownPayment.setText(String.valueOf(result));
 
@@ -79,12 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
                     mTotalLagfart.addTextChangedListener(new NumberTextWatcherForThousand(mTotalLagfart));
                     mTotalLagfart.setText(String.valueOf(getLagFart));
-
-                    // Intent i = new Intent(getApplicationContext(), PopActivity.class);
-                    // i.putExtra("summa", spacedString);
-                    // i.putExtra("lagfart", getLagFart);
-                    // i.putExtra("pantbrev", getPantbrev);
-                    // startActivity(i);
 
                 } else {
                     toastMessage("Ange belopp i samtliga fält");
@@ -192,5 +188,11 @@ public class MainActivity extends AppCompatActivity {
         if (mLagfart.length() == 0) return true;
         if (mKontantInsats.length() == 0) return true;
         return false;
+    }
+
+    private void disableEditText(EditText editText, EditText editTextSecond, EditText editTextThird) {
+        editText.setInputType(InputType.TYPE_NULL);
+        editTextSecond.setInputType(InputType.TYPE_NULL);
+        editTextThird.setInputType(InputType.TYPE_NULL);
     }
 }

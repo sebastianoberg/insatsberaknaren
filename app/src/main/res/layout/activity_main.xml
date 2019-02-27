@@ -207,6 +207,9 @@
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_shape_total"
         android:gravity="center_horizontal"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="vertical">
 
         <LinearLayout
@@ -235,17 +238,18 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.5">
+
                 <EditText
                     android:id="@+id/editText5"
                     android:layout_width="fill_parent"
                     android:layout_height="40dp"
                     android:layout_marginVertical="4dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:background="@drawable/edittext_border_total"
                     android:fontFamily="sans-serif-condensed"
                     android:hint="Totalt"
-                    android:inputType="number"
+                    android:inputType="none"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textColorHighlight="#9f5205"
@@ -278,17 +282,18 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.5">
+
                 <EditText
                     android:id="@+id/editText6"
                     android:layout_width="fill_parent"
                     android:layout_height="40dp"
                     android:layout_marginVertical="4dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:background="@drawable/edittext_border_total"
                     android:fontFamily="sans-serif-condensed"
                     android:hint="Pantbrev"
-                    android:inputType="number"
+                    android:inputType="none"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textColorHighlight="#9f5205"
@@ -321,17 +326,18 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.5">
+
                 <EditText
                     android:id="@+id/editText7"
                     android:layout_width="fill_parent"
                     android:layout_height="40dp"
                     android:layout_marginVertical="4dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:background="@drawable/edittext_border_total"
                     android:fontFamily="sans-serif-condensed"
                     android:hint="Lagfart"
-                    android:inputType="number"
+                    android:inputType="none"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textColorHighlight="#9f5205"
